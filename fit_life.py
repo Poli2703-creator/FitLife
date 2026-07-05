@@ -1,4 +1,8 @@
 # Проект FitLife - MVP версия 1.0
+WATER_PER_KG = 30  # мл воды на 1 кг веса
+ML_IN_LITER = 1000  # количество мл в литре
+
+
 def fitlife_bot():
     """Главная функция бота"""
     # Мне проще создать одну функцию, чем множество и возвращать результат
@@ -15,8 +19,8 @@ def fitlife_bot():
     bmi = round(user_weight / (user_height**2), 1)
 
     # Подсчет воды:
-    water_ml = user_weight * 30
-    water_needed_l = round((water_ml / 1000), 2)
+    water_ml = user_weight * WATER_PER_KG
+    water_needed_l = round((water_ml / ML_IN_LITER), 2)
 
     # 4. Вывод красивого результата
     print(f"Отчет для пользователя: {user_name} ({user_age} г.)")
